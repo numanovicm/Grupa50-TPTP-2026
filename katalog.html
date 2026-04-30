@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalLib | Katalog i Sadržaj</title>
+    <link rel="stylesheet" href="css/tptpstil.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>DigitalLib</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://github.com/numanovicm/Grupa50-TPTP-2026" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+        <button id="drugaBoja">Promijeni temu</button>
+    </header>
+
+    <nav class="bookmark-nav">
+        <div class="container">
+            <p>Skoči na: 
+                <a href="#tabela-naslova">Tabela naslova</a> | 
+                <a href="#galerija-knjiga">Galerija</a> | 
+                <a href="#kategorizacija">Kategorizacija</a> | 
+                <a href="#interaktivna-polica">Interaktivna polica</a>
+            </p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <aside>
+            <nav id="sporedniNav">
+                <h3>Pretraga</h3>
+                <ul>
+                    <li><a href="#tabela-naslova">Najčitanije</a></li>
+                    <li><a href="#galerija-knjiga">Novi naslovi</a></li>
+                    <li><a href="#kategorizacija">Žanrovi detaljno</a></li>
+                </ul>
+            </nav>
+            <hr>
+            <div class="statistika">
+                <h4>Statistika</h4>
+                <p>Ukupno posuđeno: <strong>1,240</strong></p>
+                <p>Aktivni članovi: <strong>450</strong></p>
+            </div>
+        </aside>
+
+        <main>
+            <section id="tabela-naslova">
+                <h2>Pregled najpopularnijih izdanja</h2>
+                <div class="tabela-wrapper">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>Naslov romana</th>
+                                <th>Autor</th>
+                                <th>Godina izdanja</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Na Drini ćuprija</td>
+                                <td>Ivo Andrić</td>
+                                <td>1945.</td>
+                                <td>Dostupno</td>
+                            </tr>
+                            <tr>
+                                <td>Tvrđava</td>
+                                <td>Meša Selimović</td>
+                                <td>1970.</td>
+                                <td>Na posudbi</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>1949.</td>
+                                <td>Dostupno</td>
+                            </tr>
+                            <tr>
+                                <td>Ana Karenjina</td>
+                                <td>Lav Tolstoj</td>
+                                <td>1877.</td>
+                                <td>Dostupno</td>
+                            </tr>
+                            <tr>
+                                <td>Duna</td>
+                                <td>Frank Herbert</td>
+                                <td>1965.</td>
+                                <td>Na posudbi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="galerija-knjiga">
+                <h2>Galerija korica</h2>
+                <div class="galerija">
+                    <div class="galerija-stavka">
+                        <img src="images/knjiga1.jpg" alt="Korice: Na Drini ćuprija">
+                    </div>
+                    <div class="galerija-stavka">
+                        <img src="images/knjiga2.jpg" alt="Korice: Ubistvo u Orijent Ekspresu">
+                    </div>
+                    <div class="galerija-stavka">
+                        <img src="images/knjiga3.jpg" alt="Korice: Duna">
+                    </div>
+                    <div class="galerija-stavka">
+                        <img src="images/knjiga4.jpg" alt="Korice: Ana Karenjina">
+                    </div>
+                    <div class="galerija-stavka">
+                        <img src="images/knjiga5.jpg" alt="Korice: Tvrđava">
+                    </div>
+                    <div class="galerija-stavka">
+                        <img src="images/knjiga6.jpg" alt="Korice: 1984">
+                    </div>
+                </div>
+            </section>
+
+            <section id="kategorizacija">
+                <h2>Detaljna klasifikacija biblioteke</h2>
+                <ul class="ugnjezdena-lista">
+                    <li>
+                        <span>Beletristika</span>
+                        <ul>
+                            <li>Romani
+                                <ul>
+                                    <li>Historijski</li>
+                                    <li>Psihološki</li>
+                                </ul>
+                            </li>
+                            <li>Novele</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Naučna fantastika</span>
+                        <ul>
+                            <li>Cyberpunk</li>
+                            <li>Svemirska opera</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="interaktivna-polica">
+                <h2>Interaktivna polica (Image Map)</h2>
+                <p>Kliknite na određeni dio police da istražite sekcije:</p>
+                <div class="image-map-container">
+                    <img src="images/polica.jpg" usemap="#policaknjiga" alt="Slika police sa knjigama">
+                    <map name="policaknjiga">
+                        <area shape="rect" coords="34,44,270,350" alt="Klasici" href="#kategorizacija">
+                        <area shape="rect" coords="290,44,550,350" alt="Krimi" href="index.html">
+                    </map>
+                </div>
+            </section>
+
+            <div class="tekst-centar">
+                <a href="#" class="skoci-na-vrh">Povratak na vrh stranice ↑</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026. Sva prava pridržana.</p>
+        <p>Autori: Dopuniti</p>
+        <div class="linkovi">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="js/tptpskripte.js"></script>
+</body>
+</html>

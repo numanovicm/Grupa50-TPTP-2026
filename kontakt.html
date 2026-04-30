@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalLib | Kontakt</title>
+    <link rel="stylesheet" href="css/tptpstil.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>DigitalLib</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://github.com/numanovicm/Grupa50-TPTP-2026" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+        <button id="drugaBoja">Promijeni temu</button>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="kontakt-sekcija">
+                <h2>Kontaktirajte nas</h2>
+                <p>Imate pitanje o određenom romanu ili želite postati član? Pišite nam!</p>
+                
+                <form id="kontaktForma" novalidate>
+                    <div class="forma-grupa">
+                        <label for="ime">Ime i prezime:</label>
+                        <input type="text" id="ime" placeholder="Vaše puno ime...">
+                        <span class="greska-poruka" id="imeGreska"></span>
+                    </div>
+
+                    <div class="forma-grupa">
+                        <label for="email">E-mail adresa:</label>
+                        <input type="email" id="email" placeholder="primjer@mail.com">
+                        <span class="greska-poruka" id="emailGreska"></span>
+                    </div>
+
+                    <div class="forma-grupa">
+                        <label for="poruka">Vaša poruka:</label>
+                        <textarea id="poruka" rows="5" placeholder="Unesite vaš upit..."></textarea>
+                        <span class="greska-poruka" id="porukaGreska"></span>
+                    </div>
+
+                    <button type="submit" class="dugme-posalji">Pošalji upit</button>
+                </form>
+
+                <div id="uspjehPoruka" style="display: none;" class="uspjeh-okvir">
+                    <h3>Hvala vam!</h3>
+                    <p>Vaša poruka je uspješno poslana. Odgovorit ćemo vam u najkraćem roku.</p>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <div class="kontakt-info">
+                <h4>Informacije</h4>
+                <p>Adresa: Franjevačka 2</p>
+                <p>📞 Tel: +387 35 67 69 42</p>
+                <p>📧 Email: info@digitallib.ba</p>
+            </div>
+        </aside>
+    </div>
+
+    
+    <footer>
+        <p>&copy; 2026. Sva prava pridržana.</p>
+        <p>Autori: Dopuniti</p>
+        <div class="linkovi">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="js/tptpskripte.js"></script>
+</body>
+</html>
