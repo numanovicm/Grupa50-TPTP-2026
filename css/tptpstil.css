@@ -15,6 +15,16 @@
 }
 
 
+body.dark-mode {
+    --boja-pozadina: #f4f1ea;
+    --boja-povrsina: #ffffff;
+    --boja-kartica: #fdf8f0;
+    --boja-akcentna: #8b5e3c; 
+    --boja-tekst: #1a1a1a;
+    --boja-tekst-sekundarni: #555555;
+    --boja-granica: #d4c5a9;
+}
+
 
 body {
     font-family: var(--font-tijelo);
@@ -125,6 +135,61 @@ aside {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+}
+.authors{
+    width: 100%;
+    background: var(--boja-pozadina);
+    padding: 15px;
+    transition: var(--prelaz);
+    animation: fadeInUp 0.8s ease forwards;
+}
+.author-cont{
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    background: var(--boja-kartica);
+    border: 1px solid var(--boja-granica);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    align-self: stretch;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.author-cont-txt {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.author-cont h3 {
+    font-family: var(--font-naslov);
+    color: var(--boja-naglasak);
+    margin-bottom: 5px;
+}
+
+.author-cont-txt h5 {
+    margin: 5px 0;   
+    font-weight: normal;
+}
+.author-cont p {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+
+.author-cont img {
+    width: 200px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5%;
+    margin-left: 15px;
+   
 }
 
 .kartice {
