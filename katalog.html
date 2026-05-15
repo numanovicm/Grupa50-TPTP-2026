@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalLib | Katalog i Sadržaj</title>
+    <title>Digitalna Biblioteka | Početna</title>
     <link rel="stylesheet" href="css/tptpstil.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
 
@@ -12,25 +13,14 @@
         <div class="logo">
             <h1>DigitalLib</h1>
         </div>
-		<nav>
-			<ul>
-				<li>
-					<a href="index.html">Početna</a>
-				</li>
-				<li>
-					<a href="katalog.html">Katalog</a>
-				</li>
-				<li>
-					<a href="autori.html">Autori</a>
-				</li>
-				<li>
-					<a href="kontakt.html">Kontakt</a>
-				</li>
-				<li>
-					<a href="https://github.com/numanovicm/Grupa50-TPTP-2026" target="_blank">GitHub</a>
-				</li>
-			</ul>
-		</nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://github.com/numanovicm/Grupa50-TPTP-2026" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
         <button id="drugaBoja">Promijeni temu</button>
     </header>
 
@@ -154,13 +144,20 @@
 
             <section id="interaktivna-polica">
                 <h2>Interaktivna polica</h2>
-                <p>Kliknite na određeni dio police da istražite sekcije:</p>
+                <p>Kliknite na određeni dio police da istražite naslove:</p>
                 <div class="image-map-container">
-                    <img src="images/polica.jpg" usemap="#policaknjiga" alt="Slika police sa knjigama">
-                    <map name="policaknjiga">
-                        <area shape="rect" coords="34,44,270,350" alt="Klasici" href="#kategorizacija">
-                        <area shape="rect" coords="290,44,550,350" alt="Krimi" href="index.html">
-                    </map>
+                    <img src="images/police.jpg" alt="Slika police sa knjigama">
+                    <div class="image-map-overlay">
+                        <a class="map-link" data-tooltip="Na Drini ćuprija" href="https://bs.wikipedia.org/wiki/Na_Drini_ćuprija" target="_blank" rel="noreferrer noopener" aria-label="Na Drini ćuprija"></a>
+                        <a class="map-link" data-tooltip="Prokleta avlija" href="https://bs.wikipedia.org/wiki/Prokleta_avlija" target="_blank" rel="noreferrer noopener" aria-label="Prokleta avlija"></a>
+                        <a class="map-link" data-tooltip="Zločin i kazna" href="https://bs.wikipedia.org/wiki/Zločin_i_kazna" target="_blank" rel="noreferrer noopener" aria-label="Zločin i kazna"></a>
+                        <a class="map-link" data-tooltip="Braća Karamazovi" href="https://bs.wikipedia.org/wiki/Braća_Karamazovi" target="_blank" rel="noreferrer noopener" aria-label="Braća Karamazovi"></a>
+                        <a class="map-link" data-tooltip="Rat i mir" href="https://bs.wikipedia.org/wiki/Rat_i_mir" target="_blank" rel="noreferrer noopener" aria-label="Rat i mir"></a>
+                        <a class="map-link" data-tooltip="Ana Karenjina" href="https://bs.wikipedia.org/wiki/Ana_Karenjina" target="_blank" rel="noreferrer noopener" aria-label="Ana Karenjina"></a>
+                        <a class="map-link" data-tooltip="Ubistvo u Orijent ekspresu" href="https://bs.wikipedia.org/wiki/Ubistvo_u_Orijent_ekspresu" target="_blank" rel="noreferrer noopener" aria-label="Ubistvo u Orijent ekspresu"></a>
+                        <a class="map-link" data-tooltip="Deset malih crnaca" href="https://bs.wikipedia.org/wiki/Deset_malih_crnaca" target="_blank" rel="noreferrer noopener" aria-label="Deset malih crnaca"></a>
+                        <a class="map-link" data-tooltip="Pas Baskervilskih" href="https://bs.wikipedia.org/wiki/Pas_Baskervilskih" target="_blank" rel="noreferrer noopener" aria-label="Pas Baskervilskih"></a>
+                    </div>
                 </div>
             </section>
 
@@ -172,12 +169,11 @@
 
     <footer>
         <p>&copy; 2026. Sva prava pridržana.</p>
-        <p>Autori: Dopuniti</p>
+        <p>Autori: Hrnjić Nadir, Hodžić Muris, Numanović Muhamed</p>
         <div class="linkovi">
-            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+            <a href="https://untz.ba/biblioteka/">Instagram</a> | <a href="https://untz.ba/biblioteka/">Facebook</a> | <a href="https://untz.ba/biblioteka/">X</a>
         </div>
     </footer>
-
     <script src="js/tptpskripte.js"></script>
 </body>
 </html>
