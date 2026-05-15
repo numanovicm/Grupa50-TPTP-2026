@@ -1,11 +1,11 @@
 
-/*Deklaracija nekih boja koje se cesto koriste*/
+
 :root {
 
     --boja-pozadina: #0f0e17;
     --boja-povrsina: #1a1a2e;
     --boja-kartica: #16213e;
-    --boja-naglasak: #e8c547;
+    --boja-akcentna: #e8c547; 
     --boja-tekst: #fffffe;
     --boja-tekst-sekundarni: #a7a9be;
     --boja-granica: #2a2a4a;
@@ -26,6 +26,12 @@ body.dark-mode {
 }
 
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /*koristimo kaskadnu osobinu css, za svaki slucaj svaki element ce imati ove osobine dok se drugacije ne odredi*/
+
 body {
     font-family: var(--font-tijelo);
     background-color: var(--boja-pozadina);
@@ -37,24 +43,25 @@ body {
 
 header {
     background-color: #0d0c1d;
-    padding: 2px;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1000; /*Sugestija Geminija kako bi header uvijek bio na vrhu*/
-    border-bottom: 2px solid var(--boja-naglasak);
+    z-index: 1000; /*pobrine se da header sigurno bude na vrhu stranice*/
+    border-bottom: 2px solid var(--boja-akcentna);
 }
 
 header h1 {
     font-family: var(--font-naslov);
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
 }
 
 header nav ul {
     display: flex;
     list-style: none;
+    gap: 20px; /*osigurava razmake*/
 }
 
 header nav a {
@@ -65,13 +72,13 @@ header nav a {
 }
 
 header nav a:hover {
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
 }
 
 
 #drugaBoja {
     padding: 8px 16px;
-    background: var(--boja-naglasak);
+    background: var(--boja-akcentna);
     border: none;
     color: #0d0c1d;
     border-radius: 5px;
@@ -89,12 +96,17 @@ header nav a:hover {
 .container {
     display: flex;
     padding: 40px 5%;
+    gap: 30px;
 }
 
 aside {
+    flex: 1;
     min-width: 250px;
 }
 
+main {
+    flex: 3;
+}
 
 
 #sporedniNav {
@@ -106,7 +118,7 @@ aside {
 
 #sporedniNav h3 {
     margin-bottom: 15px;
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
     font-family: var(--font-naslov);
 }
 
@@ -126,70 +138,14 @@ aside {
 }
 
 #sporedniNav a:hover {
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
     padding-left: 5px;
 }
-
 
 #knjige-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-}
-.authors{
-    width: 100%;
-    background: var(--boja-pozadina);
-    padding: 15px;
-    transition: var(--prelaz);
-    animation: fadeInUp 0.8s ease forwards;
-}
-.author-cont{
-    width: 100%;
-    min-width: 100%;
-    box-sizing: border-box;
-    background: var(--boja-kartica);
-    border: 1px solid var(--boja-granica);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 15px;
-    align-self: stretch;
-    margin-bottom: 30px;
-    padding: 20px;
-}
-
-.author-cont-txt {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.author-cont h3 {
-    font-family: var(--font-naslov);
-    color: var(--boja-naglasak);
-    margin-bottom: 5px;
-}
-
-.author-cont-txt h5 {
-    margin: 5px 0;   
-    font-weight: normal;
-}
-.author-cont p {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
-
-
-.author-cont img {
-    width: 200px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 5%;
-    margin-left: 15px;
-   
 }
 
 .kartice {
@@ -203,7 +159,7 @@ aside {
 
 .kartice:hover {
     transform: translateY(-10px);
-    border-color: var(--boja-naglasak);
+    border-color: var(--boja-akcentna);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
@@ -218,7 +174,7 @@ aside {
 .kartice h3 {
     font-family: var(--font-naslov);
     margin-bottom: 10px;
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
 }
 
 .kartice p {
@@ -228,23 +184,243 @@ aside {
 }
 
 .kartice a {
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
     text-decoration: none;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+@media (max-width: 900px) {
+    #knjige-grid { grid-template-columns: repeat(2, 1fr); }
+    .container { flex-direction: column; }
+}
+
+@media (max-width: 600px) {
+    #knjige-grid { grid-template-columns: 1fr; }
+    header { flex-direction: column; text-align: center; gap: 15px; }
+    header nav ul { gap: 10px; font-size: 0.8rem; }
+}
+
 
 footer {
     background: #0d0c1d;
     padding: 40px 5%;
     text-align: center;
-    border-top: 2px solid var(--boja-naglasak);
+    border-top: 2px solid var(--boja-akcentna);
     margin-top: 50px;
 }
 
 .linkovi a {
-    color: var(--boja-naglasak);
+    color: var(--boja-akcentna);
     margin: 0 10px;
     text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ovaj dio css  je za katalog stranicu */
+
+.bookmark-nav {
+    background: var(--boja-povrsina);
+    border-bottom: 1px solid var(--boja-granica);
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+}
+
+.bookmark-nav a {
+    color: var(--boja-akcentna);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+
+.tabela-wrapper {
+    overflow-x: auto; 
+    margin: 20px 0;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--boja-kartica);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela th, .tabela td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--boja-granica);
+}
+
+.tabela th {
+    background-color: var(--boja-akcentna);
+    color: #0d0c1d;
+    font-family: var(--font-naslov);
+}
+
+.tabela tr:hover {
+    background: rgba(232, 197, 71, 0.05);
+}
+
+
+.galerija {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.galerija-stavka {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--boja-granica);
+    transition: var(--prelaz);
+}
+
+.galerija-stavka:hover {
+    border-color: var(--boja-akcentna);
+    transform: scale(1.03);
+}
+
+.galerija-stavka img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.ugnjezdena-lista {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.ugnjezdena-lista span {
+    font-weight: bold;
+    color: var(--boja-akcentna);
+    font-size: 1.1rem;
+}
+
+.ugnjezdena-lista ul {
+    list-style-type: circle;
+    padding-left: 30px;
+    margin: 5px 0 15px 0;
+}
+
+
+.image-map-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--boja-akcentna);
+    border-radius: 8px;
+}
+
+
+.skoci-na-vrh {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: var(--boja-akcentna);
+    color: #0d0c1d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.tekst-centar { text-align: center; }
+
+
+
+/* Ovo je za kontakt stranicu */
+#kontakt-sekcija {
+    background: var(--boja-kartica);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--boja-granica);
+}
+
+.forma-grupa {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.forma-grupa label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--boja-akcentna);
+}
+
+.forma-grupa input, .forma-grupa textarea {
+    padding: 12px;
+    border: 1px solid var(--boja-granica);
+    border-radius: 6px;
+    background: var(--boja-pozadina);
+    color: var(--boja-tekst);
+    font-family: inherit;
+}
+
+
+.input-greska {
+    border: 2px solid var(--boja-greska) !important; /*cisto da osigura da se ovo izvrsi*/
+}
+
+.greska-poruka {
+    color: var(--boja-greska);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    min-height: 1rem;
+}
+
+.dugme-posalji {
+    background: var(--boja-akcentna);
+    color: #0d0c1d;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--prelaz);
+}
+
+.dugme-posalji:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 197, 71, 0.3);
+}
+
+.uspjeh-okvir {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid var(--boja-uspjeh);
+    border-radius: 8px;
+    text-align: center;
 }
