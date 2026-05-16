@@ -49,23 +49,74 @@
         });
     }
 
+    function setCookie(name, value, days) {
+        const expiration = new Date();
+        expiration.setTime(expiration.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${encodeURIComponent(value)};expires=${expiration.toUTCString()};path=/`;
+    }
+
+    function getCookie(name) {
+        const cookieString = document.cookie.split('; ').find(row => row.startsWith(`${name}=`));
+        return cookieString ? decodeURIComponent(cookieString.split('=')[1]) : null;
+    }
+
+    function deleteCookie(name) {
+        document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`;
+    }
+
     function applySavedTheme() {
-        const savedTheme = localStorage.getItem('theme');
+        let savedTheme = localStorage.getItem('theme');
+        if (!savedTheme) {
+            savedTheme = getCookie('theme');
+        }
         if (savedTheme === 'light') {
             bodyElement.classList.remove('dark-mode');
         } else {
             bodyElement.classList.add('dark-mode');
+        }
+        if (savedTheme) {
+            localStorage.setItem('theme', savedTheme);
+            setCookie('theme', savedTheme, 365);
         }
     }
 
     function toggleTheme() {
         bodyElement.classList.toggle('dark-mode');
         const isDarkMode = bodyElement.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        const themeName = isDarkMode ? 'dark' : 'light';
+        localStorage.setItem('theme', themeName);
+        setCookie('theme', themeName, 365);
     }
 
     if (themeButton) {
         themeButton.addEventListener('click', toggleTheme);
+    }
+
+    function syncVisitData() {
+        const localCount = Number(localStorage.getItem('visitCount') || '0');
+        const cookieCount = Number(getCookie('visitCount') || '0');
+        const visitCount = Math.max(localCount, cookieCount) + 1;
+
+        localStorage.setItem('visitCount', visitCount.toString());
+        setCookie('visitCount', visitCount.toString(), 365);
+        localStorage.setItem('lastVisited', location.pathname);
+        setCookie('lastVisited', location.pathname, 365);
+
+        return visitCount;
+    }
+
+    function showVisitData() {
+        const visitCount = syncVisitData();
+        console.log(`Ovo je vaša posjeta broj ${visitCount}.`);
+        console.log(`Posljednja posjećena stranica: ${getCookie('lastVisited') || location.pathname}`);
+    }
+
+    function registerServiceWorker() {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/sw.js')
+                .then(() => console.log('Service worker registered.'))
+                .catch(error => console.warn('Service worker registration failed:', error));
+        }
     }
 
     function showError(input, errorSpan, message) {
@@ -287,6 +338,8 @@
     applySavedTheme();
     initPageFeatures();
     updateCount();
+    showVisitData();
+    registerServiceWorker();
 
     window.addEventListener('popstate', event => {
         const url = event.state?.url || location.href;
