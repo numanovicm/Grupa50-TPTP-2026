@@ -1,0 +1,22 @@
+{
+  "name": "Digitalna Biblioteka",
+  "short_name": "DigitalLib",
+  "description": "Digitalna biblioteka sa katalogom knjiga, pretragom i kontakt formom.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0c1d",
+  "theme_color": "#e8c547",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
