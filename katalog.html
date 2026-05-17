@@ -17,6 +17,24 @@
         <div class="logo">
             <h1>DigitalLib</h1>
         </div>
+        <div class="logo-kontejner">
+    <svg width="80" height="80" viewBox="0 0 100 100" class="glavni-logo">
+        <defs>
+            <clipPath id="krug-maska">
+                <circle cx="50" cy="50" r="40" />
+            </clipPath>
+        </defs>
+
+        <circle cx="50" cy="50" r="45" class="logo-prsten" />
+
+        <image 
+            href="images/logo.png" 
+            x="10" y="10" 
+            width="80" height="80" 
+            clip-path="url(#krug-maska)" 
+            preserveAspectRatio="xMidYMid slice" />
+    </svg>
+</div>
         <nav>
             <ul>
                 <li><a href="index.html">Početna</a></li>
@@ -150,7 +168,10 @@
                 <h2>Interaktivna polica</h2>
                 <p>Kliknite na određeni dio police da istražite naslove:</p>
                 <div class="image-map-container">
+                    <picture>
+                    <source srcset="images/police.jpg" type="image/jpeg">
                     <img src="images/police.jpg" alt="Slika police sa knjigama">
+                    </picture>
                     <div class="image-map-overlay">
                         <a class="map-link" data-tooltip="Na Drini ćuprija" href="https://bs.wikipedia.org/wiki/Na_Drini_ćuprija" target="_blank" rel="noreferrer noopener" aria-label="Na Drini ćuprija"></a>
                         <a class="map-link" data-tooltip="Prokleta avlija" href="https://bs.wikipedia.org/wiki/Prokleta_avlija" target="_blank" rel="noreferrer noopener" aria-label="Prokleta avlija"></a>

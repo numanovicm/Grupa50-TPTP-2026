@@ -404,7 +404,7 @@ footer {
 /* Ovaj dio css-a je za katalog stranicu */
 
 .image-map-container { position: relative; display: block; max-width: 100%; margin: 0 auto; }
-.image-map-container img { display: block; width: 100%; height: auto; border-radius: 8px; border: 2px solid var(--boja-akcentna); }
+.image-map-container picture { display: block; width: 100%; height: auto; border-radius: 8px; border: 2px solid var(--boja-akcentna); }
 .image-map-overlay { position: absolute; inset: 0; pointer-events: none; }
 .image-map-overlay .map-link {
     position: absolute;
@@ -550,7 +550,7 @@ footer {
 }
 
 
-.image-map-container img {
+.image-map-container picture img {
     max-width: 100%;
     height: auto;
     border: 1px solid var(--boja-akcentna);
