@@ -42,8 +42,8 @@ body.dark-mode {
     --boja-povrsina: #ffffff;
     --boja-kartica: #fdf8f0;
     --boja-akcentna: #8b5e3c; 
-    --boja-tekst: #1a1a1a;
-    --boja-tekst-sekundarni: #555555;
+    --boja-tekst: #8b5e3c; 
+    --boja-tekst-sekundarni: #000000;
     --boja-granica: #d4c5a9;
 }
 
