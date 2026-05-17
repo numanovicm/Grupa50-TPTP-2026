@@ -17,6 +17,24 @@
         <div class="logo">
             <h1>DigitalLib</h1>
         </div>
+        <div class="logo-kontejner">
+    <svg width="80" height="80" viewBox="0 0 100 100" class="glavni-logo">
+        <defs>
+            <clipPath id="krug-maska">
+                <circle cx="50" cy="50" r="40" />
+            </clipPath>
+        </defs>
+
+        <circle cx="50" cy="50" r="45" class="logo-prsten" />
+
+        <image 
+            href="images/logo.png" 
+            x="10" y="10" 
+            width="80" height="80" 
+            clip-path="url(#krug-maska)" 
+            preserveAspectRatio="xMidYMid slice" />
+    </svg>
+</div>
         <nav>
             <ul>
                 <li><a href="index.html">Početna</a></li>
@@ -50,8 +68,7 @@
 
         <main>
 			<section id="search-section" style="margin-bottom: 20px;">
-   		 <input type="text" id="searchInput" placeholder="Pretraži knjige po naslovu ili autoru..." 
-    	style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
+   		 <input type="text" id="searchInput" placeholder="Pretraži knjige po naslovu ili autoru..." >
 		</section>
             <section id="landing">
                 <h2>Dobrodošli u svijet digitalnih priča</h2> 
